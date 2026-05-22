@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Echecs IA</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="board-panel">
+        <div class="board-header">
+          <div>
+            <p class="eyebrow">Entrainement</p>
+            <h1>Jeu d'echecs contre l'IA</h1>
+          </div>
+          <div class="turn-indicator" id="turn-indicator">Blancs a jouer</div>
+        </div>
+
+        <div class="board-wrapper">
+          <div class="files files-top" id="files-top"></div>
+          <div class="board-frame">
+            <div class="ranks ranks-left" id="ranks-left"></div>
+            <div class="board" id="board" aria-label="Plateau d'echecs"></div>
+            <div class="ranks ranks-right" id="ranks-right"></div>
+          </div>
+          <div class="files files-bottom" id="files-bottom"></div>
+        </div>
+      </section>
+
+      <aside class="control-panel">
+        <section class="panel-section controls-grid">
+          <label class="control-field">
+            <span>Niveau</span>
+            <select id="difficulty">
+              <option value="1">Debutant</option>
+              <option value="2" selected>Intermediaire</option>
+              <option value="3">Avance</option>
+            </select>
+          </label>
+
+          <label class="control-field">
+            <span>Ta couleur</span>
+            <select id="player-color">
+              <option value="w" selected>Blanc</option>
+              <option value="b">Noir</option>
+            </select>
+          </label>
+
+          <button id="new-game" class="primary-button" type="button">Nouvelle partie</button>
+          <button id="undo-move" class="secondary-button" type="button">Annuler un coup</button>
+        </section>
+
+        <section class="panel-section">
+          <div class="status-block">
+            <p class="section-title">Etat de la partie</p>
+            <p id="status-text">Choisis une piece puis une case valide.</p>
+          </div>
+          <div class="status-block">
+            <p class="section-title">Conseil</p>
+            <p id="hint-text">Controle le centre en debut de partie et developpe tes cavaliers avant de sortir la dame.</p>
+          </div>
+        </section>
+
+        <section class="panel-section">
+          <div class="history-header">
+            <p class="section-title">Historique</p>
+            <button id="flip-board" class="ghost-button" type="button">Tourner le plateau</button>
+          </div>
+          <ol id="move-list" class="move-list"></ol>
+        </section>
+      </aside>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
